@@ -16,7 +16,7 @@ class CreateApp extends Migration {
 		{
 			$table->increments('id');
 			$table->string('app_name');
-			$table->string('app_token');
+			$table->string('app_token')->unique();
             $table->string('store_url');
 			$table->foreign('store_url')->references('store_url')->on('store_db');
 			$table->timestamps();
